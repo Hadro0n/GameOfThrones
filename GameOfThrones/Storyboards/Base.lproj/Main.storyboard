@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,10 +44,69 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Game of Thrones Quote" id="bes-5q-o9M"/>
+                    <connections>
+                        <segue destination="W54-3L-vcY" kind="show" identifier="showQuote" id="NTo-2M-Uph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="881" y="2"/>
+        </scene>
+        <!--Quote-->
+        <scene sceneID="ll3-sH-lXT">
+            <objects>
+                <viewController id="W54-3L-vcY" customClass="QuoteViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5Z-Jm-Wpb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="fI5-d8-ZA7">
+                                <rect key="frame" x="16" y="136" width="42.5" height="0.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="iqn-PP-3ib">
+                                <rect key="frame" x="16" y="136" width="343" height="308"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-H5-BsY">
+                                        <rect key="frame" x="71.5" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="CnY-8X-H2S"/>
+                                            <constraint firstAttribute="height" constant="200" id="oub-0K-J4p"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZu-Jy-n7U">
+                                        <rect key="frame" x="138.5" y="227" width="66.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR9-dt-pgu">
+                                        <rect key="frame" x="151" y="287.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KZW-rl-nDX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iqn-PP-3ib" firstAttribute="top" secondItem="KZW-rl-nDX" secondAttribute="top" constant="20" id="6Qz-wO-fNP"/>
+                            <constraint firstItem="iqn-PP-3ib" firstAttribute="leading" secondItem="x5Z-Jm-Wpb" secondAttribute="leading" constant="16" id="lK1-oo-f6Z"/>
+                            <constraint firstItem="KZW-rl-nDX" firstAttribute="trailing" secondItem="iqn-PP-3ib" secondAttribute="trailing" constant="16" id="nah-tF-1cc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quote" id="aAL-nC-Da1"/>
+                    <connections>
+                        <outlet property="heroImage" destination="d1a-H5-BsY" id="elx-TX-4wc"/>
+                        <outlet property="heroNameLabel" destination="XZu-Jy-n7U" id="dCA-T0-LkX"/>
+                        <outlet property="quoteLabel" destination="DR9-dt-pgu" id="T5u-9t-Gd5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAI-Td-yPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oRw-BL-NBL">
@@ -74,4 +134,9 @@
             <point key="canvasLocation" x="136.80000000000001" y="3.1484257871064472"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -15,10 +15,4 @@ struct Quote: Decodable {
 struct Hero: Decodable {
     let name: String
     let slug: String
-    let house: House
-}
-
-struct House: Decodable {
-    let name: String
-    let slug: String
 }
