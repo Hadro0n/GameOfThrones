@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BAE6D3662D76E78B00D76E54 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BAE6D3652D76E78B00D76E54 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		BA8C936A2D6D170F00472198 /* GameOfThrones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThrones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE6D3662D76E78B00D76E54 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = GameOfThrones;
 			packageProductDependencies = (
+				BAE6D3652D76E78B00D76E54 /* Alamofire */,
 			);
 			productName = GameOfThrones;
 			productReference = BA8C936A2D6D170F00472198 /* GameOfThrones.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = BA8C93612D6D170F00472198;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BAE6D3642D76E78B00D76E54 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BA8C936B2D6D170F00472198 /* Products */;
 			projectDirPath = "";
@@ -345,6 +354,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAE6D3642D76E78B00D76E54 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAE6D3652D76E78B00D76E54 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAE6D3642D76E78B00D76E54 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA8C93622D6D170F00472198 /* Project object */;
 }

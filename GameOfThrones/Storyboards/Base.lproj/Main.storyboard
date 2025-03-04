@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="528-X7-pbh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7RQ-7y-Xvv">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -8,51 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game of Thrones Quote-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahp-ag-zte">
-                                <rect key="frame" x="97" y="315" width="181" height="37"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Получить цитату">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="getQuoteButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9X-k2-vUM"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Ahp-ag-zte" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gko-hE-FGq"/>
-                            <constraint firstItem="Ahp-ag-zte" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ucp-05-1Re"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Game of Thrones Quote" id="bes-5q-o9M"/>
-                    <connections>
-                        <segue destination="W54-3L-vcY" kind="show" identifier="showQuote" id="NTo-2M-Uph"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="881" y="2"/>
-        </scene>
-        <!--Quote-->
+        <!--Game of Thrones Quotes-->
         <scene sceneID="ll3-sH-lXT">
             <objects>
                 <viewController id="W54-3L-vcY" customClass="QuoteViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="iqn-PP-3ib">
-                                <rect key="frame" x="16" y="136" width="343" height="308"/>
+                                <rect key="frame" x="16" y="136" width="343" height="304"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-H5-BsY">
                                         <rect key="frame" x="71.5" y="0.0" width="200" height="200"/>
@@ -74,31 +30,51 @@
                                             <constraint firstAttribute="height" constant="200" id="oub-0K-J4p"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZu-Jy-n7U">
-                                        <rect key="frame" x="138.5" y="227" width="66.5" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZu-Jy-n7U">
+                                        <rect key="frame" x="146.5" y="227" width="50" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR9-dt-pgu">
-                                        <rect key="frame" x="151" y="287.5" width="41.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR9-dt-pgu">
+                                        <rect key="frame" x="171.5" y="304" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-sH-1eK">
+                                <rect key="frame" x="141" y="589.5" width="93" height="37.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Refresh">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="refreshButtonPressed" destination="W54-3L-vcY" eventType="touchUpInside" id="955-wI-cWI"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="IPq-E0-tca">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KZW-rl-nDX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iqn-PP-3ib" firstAttribute="top" secondItem="KZW-rl-nDX" secondAttribute="top" constant="20" id="6Qz-wO-fNP"/>
+                            <constraint firstItem="KZW-rl-nDX" firstAttribute="bottom" secondItem="HKR-sH-1eK" secondAttribute="bottom" constant="40" id="Oow-YO-o0B"/>
+                            <constraint firstItem="IPq-E0-tca" firstAttribute="centerX" secondItem="x5Z-Jm-Wpb" secondAttribute="centerX" id="YXH-1N-mCb"/>
+                            <constraint firstItem="HKR-sH-1eK" firstAttribute="centerX" secondItem="x5Z-Jm-Wpb" secondAttribute="centerX" id="k2C-PX-qIX"/>
                             <constraint firstItem="iqn-PP-3ib" firstAttribute="leading" secondItem="x5Z-Jm-Wpb" secondAttribute="leading" constant="16" id="lK1-oo-f6Z"/>
                             <constraint firstItem="KZW-rl-nDX" firstAttribute="trailing" secondItem="iqn-PP-3ib" secondAttribute="trailing" constant="16" id="nah-tF-1cc"/>
+                            <constraint firstItem="IPq-E0-tca" firstAttribute="centerY" secondItem="x5Z-Jm-Wpb" secondAttribute="centerY" id="tgv-BA-kAn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Quote" id="aAL-nC-Da1"/>
+                    <navigationItem key="navigationItem" title="Game of Thrones Quotes" id="aAL-nC-Da1"/>
                     <connections>
+                        <outlet property="activiryIndicator" destination="IPq-E0-tca" id="WmP-0S-SIM"/>
                         <outlet property="heroImage" destination="d1a-H5-BsY" id="elx-TX-4wc"/>
                         <outlet property="heroNameLabel" destination="XZu-Jy-n7U" id="dCA-T0-LkX"/>
                         <outlet property="quoteLabel" destination="DR9-dt-pgu" id="T5u-9t-Gd5"/>
@@ -106,32 +82,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAI-Td-yPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="3"/>
+            <point key="canvasLocation" x="2596" y="2.2488755622188905"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="oRw-BL-NBL">
+        <scene sceneID="FfJ-3w-50G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="528-X7-pbh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7RQ-7y-Xvv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cKc-wE-NnP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tTQ-HI-8Bk">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7mo-Ci-1cw"/>
+                        <segue destination="W54-3L-vcY" kind="relationship" relationship="rootViewController" id="RqO-cR-uGa"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ofQ-Gr-5hw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJO-I0-O1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="1656.8" y="2.2488755622188905"/>
         </scene>
     </scenes>
     <resources>

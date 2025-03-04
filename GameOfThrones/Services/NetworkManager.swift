@@ -43,7 +43,6 @@ final class NetworkManager {
             } catch {
                 completion(.failure(NetworkError.noData))
             }
-            
         }.resume()
     }
 }
