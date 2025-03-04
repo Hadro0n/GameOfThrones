@@ -13,15 +13,12 @@ final class QuoteViewController: UIViewController {
     @IBOutlet var heroImage: UIImageView!
     @IBOutlet var heroNameLabel: UILabel!
     @IBOutlet var quoteLabel: UILabel!
-    @IBOutlet var activiryIndicator: UIActivityIndicatorView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    // MARK: - Public properties
-   
-  
     // MARK: - View life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        activiryIndicator.hidesWhenStopped = true
+        activityIndicator.hidesWhenStopped = true
         fetchQuote()
     }
         
@@ -32,27 +29,30 @@ final class QuoteViewController: UIViewController {
     
     // MARK: - Private methods
     private func setupUI(with quote: Quote) {
-        heroNameLabel.text = quote.character.name
-        quoteLabel.text = quote.sentence
-    
-        if let characterImage = UIImage(named: quote.character.slug) {
-            heroImage.image = characterImage
-        } else {
-            heroImage.image = UIImage(named: "default_character")
+        DispatchQueue.main.async {
+            self.heroNameLabel.text = quote.character.name
+            self.quoteLabel.text = quote.sentence
+        
+            if let characterImage = UIImage(named: quote.character.slug) {
+                self.heroImage.image = characterImage
+            } else {
+                self.heroImage.image = UIImage(named: "default_character")
+            }
+            self.activityIndicator.stopAnimating()
         }
-        activiryIndicator.stopAnimating()
     }
     
     private func fetchQuote() {
-        activiryIndicator.startAnimating()
+        activityIndicator.startAnimating()
+        
         NetworkManager.shared.fetchRandomQuote { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                    case .success(let quote):
-                    self?.setupUI(with: quote)
-                    case .failure(let error):
-                        print("Ошибка при получении цитаты: \(error.localizedDescription)")
-                        self?.activiryIndicator.stopAnimating()
+            switch result {
+            case .success(let quote):
+                self?.setupUI(with: quote)
+            case .failure(let error):
+                print("Ошибка при получении цитаты: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
                 }
             }
         }

@@ -74,7 +74,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Game of Thrones Quotes" id="aAL-nC-Da1"/>
                     <connections>
-                        <outlet property="activiryIndicator" destination="IPq-E0-tca" id="WmP-0S-SIM"/>
+                        <outlet property="activityIndicator" destination="IPq-E0-tca" id="WmP-0S-SIM"/>
                         <outlet property="heroImage" destination="d1a-H5-BsY" id="elx-TX-4wc"/>
                         <outlet property="heroNameLabel" destination="XZu-Jy-n7U" id="dCA-T0-LkX"/>
                         <outlet property="quoteLabel" destination="DR9-dt-pgu" id="T5u-9t-Gd5"/>

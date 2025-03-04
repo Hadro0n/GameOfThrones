@@ -6,12 +6,7 @@
 //
 
 import Foundation
-
-enum NetworkError: Error {
-    case invalidUrl
-    case noData
-    case decodingError
-}
+import Alamofire
 
 final class NetworkManager {
     
@@ -19,30 +14,28 @@ final class NetworkManager {
     static let shared = NetworkManager()
     
     // MARK: - Private properties
-    private let baseUrl = URL(string: "https://api.gameofthronesquotes.xyz/v1/random")
+    private let baseUrl = "https://api.gameofthronesquotes.xyz/v1/random"
     
     // MARK: - Public methods
-    func fetchRandomQuote(completion: @escaping (Result<Quote, Error>) -> Void) {
-        guard let url = baseUrl else {
-            completion(.failure(NetworkError.invalidUrl))
-            return
-        }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                completion(.failure(error))
-                return
+    func fetchRandomQuote(completion: @escaping(Result<Quote, AFError>) -> Void) {
+        AF.request(baseUrl, method: .get)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let json = value as? [String: Any] else { return }
+                    guard let sentence = json["sentence"] as? String else { return }
+                    guard let characterDict = json["character"] as? [String: Any] else { return }
+                    
+                    let character = Hero(heroDetails: characterDict)
+                    let quote = Quote(quoteDetails: ["sentence": sentence, "character": characterDict])
+                    
+                    completion(.success(quote))
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-            
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                let quote = try decoder.decode(Quote.self, from: data)
-                completion(.success(quote))
-            } catch {
-                completion(.failure(NetworkError.noData))
-            }
-        }.resume()
     }
 }
